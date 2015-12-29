@@ -1,8 +1,8 @@
 FROM debian
 
 ENTRYPOINT [ "/marathon-lb/run" ]
-CMD        [ "sse", "-m", "http://master.mesos:8080", "--health-check", "--group", "external" ]
-EXPOSE     80 81 443 9090
+CMD        [ "sse", "--health-check", "--group", "external" ]
+EXPOSE     80 81 443 9090 9091
 
 COPY  . /marathon-lb
 
